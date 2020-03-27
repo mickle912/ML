@@ -1,13 +1,15 @@
 from nltk.tokenize import sent_tokenize
 
+patch_text = r'D:\slava\example.txt'
+path_write = r'D:\slava\writingf101.txt'
 
-txt = open(r'D:\slava\example.txt').read()
-str2=''
+txt = open(patch_text).read()
+str2 = ''
 for c in txt:
-   if c not in ('0','1','2','3','4','5','6','7','8','9', '—', 'I', '»', '«', 'V', '-', '...', '[', ']', '(', ')', '…', '..', '–', '!..', '“', '„', '\r', '\n', ', ,'):
-      str2=str2+c
-str2.replace(';', ',')
-sents = sent_tokenize(str2, )
-f = open(r'D:\slava\writingf14.txt', 'w')
+    if c not in ('I', 'V', '...', '[', ']', '(', ')', '…', '..', '–', '!..', '\r', ', ,', "»", "«"):
+        str2 += c
+str2 = str2.replace("\n", " ")
+sents = sent_tokenize(str2)
+f = open(path_write, 'w')
 for sents in sents:
-  f.write(sents + '\n')
+    f.write(sents + '\n')
