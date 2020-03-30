@@ -11,7 +11,6 @@ for c in txt: # delete all bad simbols in text
 str2 = str2.replace("\n", " ") #replace \n -> ' '
 str2 = str2.replace("...", ".")
 sents = sent_tokenize(str2) #tokenize
-print(sents[0])
 sentens = []
 temple_str = ''
 for sent in sents:
@@ -28,7 +27,6 @@ for sent in sents:
         temple_str += sent
         sentens.append(temple_str)
         temple_str = ''
-print(sentens[0])
 a = 0
 f = open(path_write, 'w')
 for sent in sentens:# write to the file
