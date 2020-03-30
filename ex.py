@@ -12,4 +12,5 @@ str2 = str2.replace("\n", " ")
 sents = sent_tokenize(str2)
 f = open(path_write, 'w')
 for sents in sents:
+    sents = sents[:200]
     f.write(sents + '\n')
